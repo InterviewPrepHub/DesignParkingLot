@@ -86,8 +86,8 @@
     );
 
 - Queries 
-Find first free compatible spot for CAR (MEDIUM or LARGE), prefer MEDIUM:
 
+Find first free compatible spot for CAR (MEDIUM or LARGE), prefer MEDIUM:
 
     SELECT spot_id FROM spots
     WHERE is_free = TRUE AND size IN ('MEDIUM','LARGE')
@@ -113,12 +113,12 @@ In a Parking System, we have different types of vehicles (Car, Bike, Truck) and 
 
 ### Without Factory Pattern:
 
-The client code (Main method or ParkingLot) would directly say new Car(), new MotorcycleSpot(), etc.
-This means client code is tightly coupled with object creation.
+- The client code (Main method or ParkingLot) would directly say new Car(), new MotorcycleSpot(), etc.
+- This means client code is tightly coupled with object creation.
 
 ### With Factory Pattern:
 
-We create a VehicleFactory and a ParkingSpotFactory.
+We create a VehicleFactory and a ParkingSpotFactory. 
 The client just says: “I need a CAR” or “I need a spot for a TRUCK”.
 The factory decides which object to return.
 
